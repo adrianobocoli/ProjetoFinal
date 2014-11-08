@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'principais/home'
+
+  get 'principais/ajuda'
+
+  get 'principais/sobre'
+
   resources :usuarios
 
   # The priority is based upon order of creation: first created -> highest priority.
