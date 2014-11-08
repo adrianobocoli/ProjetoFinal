@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-  get 'principais/home'
-
-  get 'principais/ajuda'
-
-  get 'principais/sobre'
 
   resources :usuarios
 
@@ -11,7 +6,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root to: "usuarios#index"
+  root to: "home#index"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
