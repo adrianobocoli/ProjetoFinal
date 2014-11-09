@@ -15,7 +15,7 @@
 
 <p>
   <strong>Foto:</strong>
-  <%= @usuario.foto %>
+  <%= image_tag @usuario.foto.url if @usuario.foto? %>
 </p>
 
 <p>

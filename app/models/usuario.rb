@@ -6,6 +6,7 @@ class Usuario < ActiveRecord::Base
     update_attribute(:remember_digest, Usuario.digest(remember_token))
   end
 
+	mount_uploader :foto, PictureUploader
 	validates :login, uniqueness: { case_sensitive: false, :message => "ja existe!"}	
 	validates_presence_of :login, :message => "não pode ser vazio!"
 	validates_presence_of :senha, :message => "não pode ser vazio!"
@@ -22,6 +23,12 @@ class Usuario < ActiveRecord::Base
 	def Usuario.new_token
     SecureRandom.urlsafe_base64
   end
+
+	def foto_size
+      if foto.size > 5.megabytes
+        errors.add(:foto, "deve ser menor que 5MB")
+      end
+    end
 
 	def authenticated?(remember_token)
     return false if remember_digest.nil?
