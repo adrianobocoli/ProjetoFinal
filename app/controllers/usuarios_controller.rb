@@ -29,6 +29,7 @@ class UsuariosController < ApplicationController
     respond_to do |format|
       if @usuario.save
 		  flash[:success] = "Cadastro realizado com sucesso! Bem-vindo ao site!"
+		  log_in @usuario
         format.html { redirect_to @usuario}
         format.json { render :show, status: :created, location: @usuario }
       else

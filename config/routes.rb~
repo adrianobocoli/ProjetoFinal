@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
-
   resources :usuarios
   
   root             'home#index'
   get 'ajuda'   => 'estaticas#ajuda'
   get 'sobre'   => 'estaticas#sobre'
   get 'contato' => 'estaticas#contato'
+  get 'signup'  => 'users#new'
+
+  get 'login'   => 'sessao#new'
+  get 'login'   => 'sessao#create'
+  get 'logout'   => 'sessao#destroy'
+
 end
