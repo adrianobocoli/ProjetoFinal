@@ -1,5 +1,20 @@
 class UsuariosController < ApplicationController
+  before_action :logged_in_user, only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
+
+	def logged_in_user
+		unless logged_in?
+			store_location
+			flash[:danger] = "Por favor! Logue para obter acesso a pagina!."
+			redirect_to login_url
+		end
+	end
+
+	def correct_user
+      @user = Usuario.find(params[:id])
+      redirect_to(root_url) unless @user == current_user
+    end
 
   # GET /usuarios
   # GET /usuarios.json
@@ -46,15 +61,14 @@ class UsuariosController < ApplicationController
   # PATCH/PUT /usuarios/1
   # PATCH/PUT /usuarios/1.json
   def update
-    respond_to do |format|
-      if @usuario.update(usuario_params)
-        format.html { redirect_to @usuario, notice: 'Usuario was successfully updated.' }
-        format.json { render :show, status: :ok, location: @usuario }
-      else
-        format.html { render :edit }
-        format.json { render json: @usuario.errors, status: :unprocessable_entity }
-      end
+    @usuario = Usuario.find(params[:id])
+    if @usuario.update_attributes(usuario_params)
+		flash[:success] = "Dados alterados com sucesso!"
+      redirect_to @usuario
+    else
+      render 'edit'
     end
+      
   end
 
   # DELETE /usuarios/1

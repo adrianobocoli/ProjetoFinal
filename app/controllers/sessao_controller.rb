@@ -8,10 +8,9 @@ class SessaoController < ApplicationController
 		log_in usuario
 		params[:sessao][:remember_me] == '1' ? remember(usuario) : forget(usuario)
 		remember usuario
-		redirect_to usuario
-
+		redirect_back_or usuario
 	 else 
-	 	flash[:danger] = 'Invalid email/password combination' # Not quite right!
+	 	flash[:danger] = 'Combinacao login/senha inválida!' # Not quite right!
 	 	render 'new'
 	 end
   end
