@@ -19,10 +19,17 @@ class Usuario < ActiveRecord::Base
 	validates :email, uniqueness: { case_sensitive: false, :message => "ja existe!" }
 	validates_format_of :email, :with => /\b[A-Z0-9._%a-z\-]+@(?:[A-Z0-9a-z\-]+\.)+[A-Za-z]{2,4}\z/, :message => "inválido!"
 	validates_presence_of :descricaoPessoal, :message => "não pode ser vazio!"
+	validate :foto_size
 
 	def Usuario.new_token
     SecureRandom.urlsafe_base64
   end
+
+	def foto_size
+      if foto.size > 5.megabytes
+        errors.add(:foto, "deve ser menor que 5MB")
+      end
+    end
 
 	def authenticated?(remember_token)
     return false if remember_digest.nil?

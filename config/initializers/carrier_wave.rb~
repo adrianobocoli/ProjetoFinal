@@ -1,10 +1,36 @@
 CarrierWave.configure do |config|
-    config.fog_credentials = {
-      # Configuration for Amazon S3
-      :provider              => 'AWS',
-      :aws_access_key_id     => ENV['AKIAJGLJ2KUQMW6G5YUQ'],
-      :aws_secret_access_key => ENV['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']
-    }
-    config.fog_directory     =  ENV['projetofinaltopicos']
+  config.fog_credentials = {
+    :provider               => 'AWS',
+    :aws_access_key_id      => ENV['AKIAJGLJ2KUQMW6G5YUQ'],
+    :aws_secret_access_key  => ENV['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']
+  }
+
+  if Rails.env.test? || Rails.env.development?
+    config.storage = :file
+    config.enable_processing = false
+    config.root = "#{Rails.root}/tmp/uploads/#{DateTime.now.to_f}.#{rand(999)}.#{rand(999)}"
+  else
+    config.storage = :fog
   end
+
+  config.cache_dir = "#{Rails.root}/tmp/uploads/#{DateTime.now.to_f}.#{rand(999)}.#{rand(999)}"
+  config.fog_directory  = ENV['projetofinaltopicos']
+  config.fog_public     = false
+  config.fog_attributes = {}
 end
+
+CarrierWave.configure do |config|
+
+  config.fog_credentials = {
+    provider: "AWS",
+    aws_access_key_id: ENV["AKIAJGLJ2KUQMW6G5YUQ"],
+    aws_secret_access_key: ENV["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"],
+    #region: 'Northern California'
+
+  }
+  config.cache_dir = "#{Rails.root}/tmp/uploads" 
+  config.fog_directory = ENV["projetofinaltopicos"]
+  config.fog_public = false
+  config.fog_attributes = {'Cache-Control'=>'max-age=315576000'}
+end
+

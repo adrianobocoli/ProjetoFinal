@@ -9,10 +9,19 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
-   if Rails.env.production?
-    storage :fog
-  else
     storage :file
+
+	version :large_avatar do
+    # returns a 150x150 image
+    process :resize_to_fill => [150, 150]
+  end
+  version :medium_avatar do
+    # returns a 50x50 image
+    process :resize_to_fill => [50, 50]
+  end
+  version :small_avatar do
+    # returns a 35x35 image
+    process :resize_to_fill => [35, 35]
   end
 
   # Override the directory where uploaded files will be stored.
