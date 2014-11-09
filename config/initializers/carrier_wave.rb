@@ -7,4 +7,3 @@ CarrierWave.configure do |config|
     }
     config.fog_directory     =  ENV['projetofinaltopicos']
   end
-end
