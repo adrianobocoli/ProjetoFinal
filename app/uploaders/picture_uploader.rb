@@ -10,7 +10,6 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
-  storage :fog
 	
 	version :display do
     process :eager => true

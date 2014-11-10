@@ -11,6 +11,7 @@ gem 'rails_12factor', group: :production
 gem 'carrierwave',             '0.10.0'
 gem 'cloudinary'
 gem 'mini_magick',             '3.8.0'
+gem 'fog'
 
 
 # Use SCSS for stylesheets
