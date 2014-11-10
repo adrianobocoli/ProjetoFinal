@@ -8,11 +8,10 @@ gem 'sqlite3', group: :development
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production
 
-gem 'aws-sdk'
 gem 'carrierwave',             '0.10.0'
+gem 'cloudinary'
 gem 'mini_magick',             '3.8.0'
-gem 'fog',                     '1.23.0'
-gem 'figaro'
+
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

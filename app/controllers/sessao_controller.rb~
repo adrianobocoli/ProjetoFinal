@@ -3,13 +3,12 @@ class SessaoController < ApplicationController
   end
 
   def create
-	 usuario = Usuario.where(:login => params[:sessao][:login].downcase).first
+	 usuario = Usuario.where(:login.to_s.downcase => params[:sessao][:login].downcase).first
     if usuario && usuario.senha.to_s == (params[:sessao][:senha]).to_s
 		log_in usuario
 		params[:sessao][:remember_me] == '1' ? remember(usuario) : forget(usuario)
 		remember usuario
-		redirect_to usuario
-		redirect_back_or user
+		redirect_back_or usuario
 	 else 
 	 	flash[:danger] = 'Combinacao login/senha inválida!' # Not quite right!
 	 	render 'new'

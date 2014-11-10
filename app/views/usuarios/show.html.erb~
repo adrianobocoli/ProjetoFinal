@@ -15,7 +15,7 @@
 
 <p>
   <strong>Foto:</strong>
-  <%= image_tag usuario.foto.url if usuario.foto? %>
+  <% unless @usuario.foto_url.nil? %><%= cl_image_tag @usuario.foto_url(:display) %><br /><% end %>
 </p>
 
 <p>
