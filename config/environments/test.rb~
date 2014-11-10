@@ -1,4 +1,6 @@
 Rails.application.configure do
+    config.aws_access_key_id     = ENV['AKIAJGLJ2KUQMW6G5YUQ']
+  config.aws_secret_access_key = ENV['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']
   # Settings specified here will take precedence over those in config/application.rb.
 
   # The test environment is used exclusively to run your application's
