@@ -1,10 +1,10 @@
 <div class="center jumbotron">
-  <h1>Welcome to the Sample App</h1>
+  <h1_t>Projeto Final de Tópicos Especiais</h1_t><br/>
 
-  <h2>
+  <h2_t>
     Página inicial do projeto de Topicos Especiais em Computação, do curso de Ciencia da Computacao
-    <a href="http://bcc.unifal-mg.edu.br/">BCC - UNIFAL-MG</a>
-  </h2>
+    <a href="http://bcc.unifal-mg.edu.br/">BCC - UNIFAL-MG</a><br/>
+  </h2_t>
 
   <%= link_to "Cadastre-se agora!", 'usuarios/new', class: "btn btn-lg btn-primary" %>
 </div>
