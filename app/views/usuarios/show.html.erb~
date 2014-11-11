@@ -15,7 +15,7 @@
 
 <p>
   <strong>Foto:</strong>
-  <% unless @usuario.foto_url.nil? %><%= cl_image_tag @usuario.foto_url(:small_avatar) %><br /><% end %>
+  <% unless @usuario.foto_url.nil? %><%= cl_image_tag @usuario.foto_url(:medium_avatar) %><br /><% end %>
 </p>
 
 <p>
@@ -43,7 +43,11 @@
   <%= @usuario.descricaoPessoal %>
 </p>
 
-<%= link_to "Editar meus dados!", edit_usuario_path(@usuario), class: "btn btn-lg btn-primary" %>
+<%= link_to "Editar meus dados!", edit_usuario_path(@usuario), class: "btn btn-lg btn-primary" %><br/>
+<% if current_user?(@usuario) %>
+     <%= link_to "delete", @usuario, method: :delete,
+                                  data: { confirm: "Voce tem certeza?" }, class: "btn btn-lg btn-primary" %>
+  <% end %>
 </div>
 </div>
 

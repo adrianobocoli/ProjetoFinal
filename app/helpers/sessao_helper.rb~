@@ -6,6 +6,10 @@ module SessaoHelper
     session.delete(:forwarding_url)
   end
 
+  def random_users
+  	@random = Usuario.limit(5).order("RANDOM()")
+  end
+
   # Stores the URL trying to be accessed.
   def store_location
     session[:forwarding_url] = request.url if request.get?
@@ -31,6 +35,10 @@ def current_user
         @current_user = usuario
       end
     end
+  end
+
+def current_user?(usuario)
+    usuario == current_user
   end
 
 def logged_in?

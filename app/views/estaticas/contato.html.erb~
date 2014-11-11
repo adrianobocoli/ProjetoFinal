@@ -1,4 +1,4 @@
-<% provide(:title, "Sobre") %>
+<% provide(:title, "Contato") %>
 <!DOCTYPE html>
 <html>
   <head>

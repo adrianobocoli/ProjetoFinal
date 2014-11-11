@@ -1,14 +1,7 @@
 class UsuariosController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update, :destroy]
   before_action :correct_user,   only: [:edit, :update]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
-
-	helper_method :random
-
-    private
-    def random
-        @random ||= Usuario.find(:all, :limit => 2, :order => "Random()")
-    end
 
 	def logged_in_user
 		unless logged_in?
@@ -84,11 +77,9 @@ class UsuariosController < ApplicationController
   # DELETE /usuarios/1
   # DELETE /usuarios/1.json
   def destroy
-    @usuario.destroy
-    respond_to do |format|
-      format.html { redirect_to usuarios_url, notice: 'Usuario was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    Usuario.find(params[:id]).destroy
+    flash[:success] = "Usuario excluido!"
+    redirect_to root_url
   end
 
   private

@@ -33,6 +33,10 @@ def current_user
     end
   end
 
+def current_user?(usuario)
+    usuario == current_user
+  end
+
 def logged_in?
     !current_user.nil?
   end

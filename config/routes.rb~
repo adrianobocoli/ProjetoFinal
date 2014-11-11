@@ -7,9 +7,10 @@ Rails.application.routes.draw do
   get 'sobre'   => 'estaticas#sobre'
   get 'contato' => 'estaticas#contato'
   get 'signup'  => 'users#new'
+  get 'edit'    => 'usuarios#edit'
 
   get 'login'   => 'sessao#new'
-  get 'login'   => 'sessao#create'
-  get 'logout'   => 'sessao#destroy'
+  post 'login'   => 'sessao#create'
+  delete 'logout'   => 'sessao#destroy'
 
 end
