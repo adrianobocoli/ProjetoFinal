@@ -3,6 +3,13 @@ class UsuariosController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
+	helper_method :random
+
+    private
+    def random
+        @random ||= Usuario.find(:all, :limit => 2, :order => "Random()")
+    end
+
 	def logged_in_user
 		unless logged_in?
 			store_location
@@ -21,6 +28,9 @@ class UsuariosController < ApplicationController
   def index
     @usuarios = Usuario.all
   end
+
+	# GET /usuarios/random
+	
 
   # GET /usuarios/1
   # GET /usuarios/1.json

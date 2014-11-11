@@ -1,2 +1,12 @@
-<h1>Estaticas#ajuda</h1>
-<p>Find me in app/views/estaticas/ajuda.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<div class="center jumbotron">
+  <h1>Referencias</h1>
+	<br/>
+  <h2>
+    http://hashrocket.com/blog/posts/rails-quick-tips-random-records
+  </h2>
+
+</div>
+
+

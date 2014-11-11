@@ -1,0 +1,5 @@
+class RandomUsersController < ApplicationController
+def index
+	 @randomusers = Usuario.find(:all, :limit => 2, :order => "Random()")
+  end
+end

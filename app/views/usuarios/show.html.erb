@@ -15,7 +15,7 @@
 
 <p>
   <strong>Foto:</strong>
-  <% unless @usuario.foto_url.nil? %><%= cl_image_tag @usuario.foto_url(:display) %><br /><% end %>
+  <% unless @usuario.foto_url.nil? %><%= cl_image_tag @usuario.foto_url(:medium_avatar) %><br /><% end %>
 </p>
 
 <p>

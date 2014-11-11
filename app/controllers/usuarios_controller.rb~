@@ -5,6 +5,7 @@ class UsuariosController < ApplicationController
 
 	def logged_in_user
 		unless logged_in?
+			store_location
 			flash[:danger] = "Por favor! Logue para obter acesso a pagina!."
 			redirect_to login_url
 		end
@@ -19,7 +20,11 @@ class UsuariosController < ApplicationController
   # GET /usuarios.json
   def index
     @usuarios = Usuario.all
+	 @random = Usuario.find(:all, :limit => 2, :order => "Random()")
   end
+
+	# GET /usuarios/random
+	
 
   # GET /usuarios/1
   # GET /usuarios/1.json
