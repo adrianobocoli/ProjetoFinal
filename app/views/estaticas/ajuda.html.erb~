@@ -1,8 +1,8 @@
-<% provide(:title, "Help") %>
+<% provide(:title, "Ajuda") %>
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= yield(:title) %> | Ruby on Rails Tutorial Sample App</title>
+    <title><%= yield(:title) %> | Projeto Final de Topicos</title>
   </head>
   <body>
     <p id="notice"><%= notice %></p>
@@ -11,6 +11,9 @@
 	<br/>
 		  <h2>
 		    <a href="http://hashrocket.com/blog/posts/rails-quick-tips-random-records">Obtendo usuários randomicamente para o carousel</a>
+		  </h2>
+		  <h2>
+		    <a href="http://stackoverflow.com/questions/10714119/ruby-on-rails-call-controller-method-from-a-view">Usuarios random na index</a>
 		  </h2>
 </div>
   </body>

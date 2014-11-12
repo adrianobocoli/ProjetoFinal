@@ -43,12 +43,8 @@
   <%= @usuario.descricaoPessoal %>
 </p>
 
-<%= link_to "Editar meus dados!", edit_usuario_path(@usuario), class: "btn btn-lg btn-primary" %><br/>
-<% if current_user?(@usuario) %>
-     <%= link_to "delete", @usuario, method: :delete,
-                                  data: { confirm: "Voce tem certeza?" }, class: "btn btn-lg btn-primary" %>
-  <% end %>
 </div>
 </div>
 
+<%= link_to @random_image.to_s %>
 

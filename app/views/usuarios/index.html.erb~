@@ -7,3 +7,7 @@
     </li>
   <% end %>
 </ul>
+
+random
+
+<% unless @random_image.foto_url.nil? %><%= cl_image_tag @random_image.foto_url(:medium_avatar) %><br /><% end %>

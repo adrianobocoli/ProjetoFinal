@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
-  before_action :logged_in_user, only: [:edit, :update, :destroy]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :logged_in_user, only: [:edit, :update, :destroy, :show]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
 	def logged_in_user

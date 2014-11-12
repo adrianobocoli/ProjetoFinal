@@ -15,16 +15,16 @@
     <a href="http://bcc.unifal-mg.edu.br/">BCC - UNIFAL-MG</a>
   </h2>
 
-	<% @usuarios.sample(5).each do |usuario| %>
-    <li>
-      <%= link_to usuario.nomeCompleto, usuario %>
-    </li>
-  <% end %>
-
 	<div class="container">
 	
+	<% random.each do |string| %>
+		<%= string.nomeCompleto  %>
+		<%= link_to string.nomeCompleto, string %>
+	<% end %>
+	<%= random %>
+	
 		Usuários cadastrados
-		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 550px; height:375px; margin: 0 auto">
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
     	<!-- Carousel indicators -->
     	<ol class="carousel-indicators">
       	<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -34,27 +34,23 @@
     	<!-- Carousel items -->
     	<div class="carousel-inner">
       	<div class="item active">
-				<%= image_tag('2.jpg') %>
+				<%= image_tag('avatar.jpg', :width=>"300px", :height=>"300px") %>
       	   <h2></h2>
             <div class="carousel-caption" background="rgba(0,0,0,0.5)">
-				  <h3>Homer</h3>
-              <h4>Lorem ipsum dolor sit amet consectetur…</h4>
+				  <h3>Bem-vindo ao Pro.Fi.T.E.C.</h3>
+              <h4>Projeto Final de Topicos em Computação</h4>
             </div>
         </div>
-        <div class="item">
-            <h2>Slide 2</h2>
+		  <% random.each do |string| %>
+        <div class="item ">
+				<%= cl_image_tag string.foto_url(:large_avatar) %>
+            <h2></h2>
             <div class="carousel-caption">
-              <h3>Second slide label</h3>
+              <h3><%= link_to string.nomeCompleto, string %></h3>
               <p>Aliquam sit amet gravida nibh, facilisis gravida…</p>
             </div>
         </div>
-        <div class="item">
-            <h2>Slide 3</h2>
-            <div class="carousel-caption">
-              <h3>Third slide label</h3>
-              <p>Praesent commodo cursus magna vel…</p>
-            </div>
-        </div>
+			<%end%>
     </div>
     <!-- Carousel nav -->
     <a class="carousel-control left" href="#myCarousel" data-slide="prev">
