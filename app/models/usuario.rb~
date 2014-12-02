@@ -1,9 +1,8 @@
 class Usuario < ActiveRecord::Base
 	attr_accessor :remember_token
 	
-	def self.search(consulta)
-  		search_condition = "%" + consulta + "%"
-  		Usuario.find(:all, :conditions => ['nomeCompleto LIKE ?', search_condition, search_condition])
+	def self.search(query)
+  		where("nomeCompleto ilike ?", "%#{query}%") 
 	end
   
   def remember
