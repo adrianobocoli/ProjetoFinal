@@ -11,6 +11,10 @@
   }
 }
 
+.carousel-inner .item img {
+    margin: 0 auto;
+    height: 100%;
+}
 .carousel item{
     margin:0px auto !important;
 }
