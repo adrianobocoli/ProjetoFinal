@@ -26,12 +26,13 @@
     	  		<div class="input-group">
       			<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Buscar usuarios" %>
 					<span class="input-group-btn">
-        				<button class="btn btn-default" type="button" style="height:30px;">Pesquisar!</button>
+        				<button class="btn btn-default" type="submit" style="height:30px;">Pesquisar!</button>
       			</span>
 				</div>
  		  <% end %>
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
+			 <li><%= link_to "Cadastre-se!", 'usuarios/new' %><br/><br/></li>
         <% end %>
       </ul>
     </nav>

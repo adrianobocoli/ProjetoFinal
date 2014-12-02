@@ -24,10 +24,6 @@ class UsuariosController < ApplicationController
     else
       @usuarios = Usuario.order("created_at DESC")
     end
-
-	 if @usuarios.empty?
-		render(:index) { |page| page.alert("Emails have been sent...") }
-	 end
   end
 
 	# GET /usuarios/random

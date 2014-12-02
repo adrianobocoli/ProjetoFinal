@@ -24,4 +24,5 @@ en:
     attributes:
       usuario:
         descricaoPessoal: Descrição Pessoal
+			nomeCompleto: Nome Completo
 
