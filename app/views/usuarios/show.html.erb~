@@ -1,24 +1,32 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Informações do usuário <%= @usuario.nomeCompleto %></h1>
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-<p>
-  <strong>Login:</strong>
-  <%= @usuario.login %>
-</p>
-
-<p>
-  <strong>Senha:</strong>
-  <%= @usuario.senha %>
-</p>
-
-<p>
-  <strong>Foto:</strong>
-  <% unless @usuario.foto_url.nil? %><%= cl_image_tag @usuario.foto_url(:medium_avatar) %><br /><% end %>
-</p>
-
-<p>
+<head>
+	<link media="all" rel="stylesheet" type="text/css" href="app/assets/stylesheets/all.css" />
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.main.js"></script>
+</head>
+	<!--page-->
+		<!--wrapper-->
+		<div id="wrapper">
+			<!--main-->
+			<div id="main">
+				<div class="main-holder">
+					<div class="main-frame">
+						<div class="main-content">
+							<!--container-->
+							<div class="container">
+								<!--sidebar-->
+								<div id="sidebar">
+								<!--photo-->
+								<div class="photo"><% unless @usuario.foto_url.nil? %><%= cl_image_tag @usuario.foto_url(:large_avatar) %><br /><% end %>
+								</div>
+								</div>
+								<!--content-->
+								<div id="content">
+									<!--text-->
+									<div class="text">
+										<p>
   <strong>Nome Completo:</strong>
   <%= @usuario.nomeCompleto %>
 </p>
@@ -42,9 +50,12 @@
   <strong>Descricao Pessoal:</strong>
   <%= @usuario.descricaoPessoal %>
 </p>
-
-</div>
-</div>
-
-<%= link_to @random_image.to_s %>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
 

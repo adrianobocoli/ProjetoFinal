@@ -17,13 +17,7 @@
 
 	<div class="container">
 	
-	<% random.each do |string| %>
-		<%= string.nomeCompleto  %>
-		<%= link_to string.nomeCompleto, string %>
-	<% end %>
-	<%= random %>
-	
-		Usuários cadastrados
+		<h4>Usuários cadastrados</h4>
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
     	<!-- Carousel indicators -->
     	<ol class="carousel-indicators">

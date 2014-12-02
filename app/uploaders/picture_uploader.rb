@@ -17,16 +17,20 @@ class PictureUploader < CarrierWave::Uploader::Base
   end
 
 	version :large_avatar do
-    # returns a 150x150 image
+    # returns a 300x300 image
     process :resize_to_fill => [300, 300]
   end
   version :medium_avatar do
-    # returns a 50x50 image
+    # returns a 1501x50 image
     process :resize_to_fill => [150, 150]
   end
+	
   version :small_avatar do
-    # returns a 35x35 image
     process :resize_to_fill => [50, 50]
+  end
+  version :thumb_avatar do
+    # returns a 50x50 image
+    process :resize_to_fill => [100, 100]
   end
 
   # Override the directory where uploaded files will be stored.

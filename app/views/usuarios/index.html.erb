@@ -9,6 +9,7 @@
 
   <% @usuarios.each do |usuario| %>
     <li>
+		<% unless usuario.foto_url.nil? %><%= cl_image_tag usuario.foto_url(:small_avatar) %><% end %>
       <%= link_to usuario.nomeCompleto, usuario %>
     </li>
   <% end %>

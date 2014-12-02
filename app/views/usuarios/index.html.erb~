@@ -2,14 +2,14 @@
 
 <ul class="users">
   <% if @usuarios.empty? %>
-  <script language="JavaScript">
-   alert("<%= @popup_message %> Nenhum usuário encontrado!!");
-  </script>
-	Nenhum usuário encontrado! Busque novamente!
-<% end %>
+  	<script language="JavaScript">
+   	alert("<%= @popup_message %> Nenhum usuário encontrado!!");
+  	</script>
+	<% end %>
 
   <% @usuarios.each do |usuario| %>
     <li>
+		<% unless usuario.foto_url.nil? %><%= cl_image_tag usuario.foto_url(:small_avatar) %><br /><% end %>
       <%= link_to usuario.nomeCompleto, usuario %>
     </li>
   <% end %>
