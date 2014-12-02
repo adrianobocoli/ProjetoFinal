@@ -2,7 +2,9 @@ class Usuario < ActiveRecord::Base
 	attr_accessor :remember_token
 	
 	def self.search(query)
-  		where("lower(nomeCompleto) LIKE lower(?)", "%#{query}%") 
+		query = "%#{query}%"
+  		nomeCompleto_match = arel_table[:nomeCompleto].matches(query)
+  		where(nomeCompleto_match)
 	end
   
   def remember

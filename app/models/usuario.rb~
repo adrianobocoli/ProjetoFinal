@@ -2,7 +2,9 @@ class Usuario < ActiveRecord::Base
 	attr_accessor :remember_token
 	
 	def self.search(query)
-  		where("nomeCompleto ilike ?", "%#{query}%") 
+		query = "%#{query}%"
+  		nomeCOmpleto_match = arel_table[:nomeCompleto].matches(query)
+  		where(nomeCompleto_match)
 	end
   
   def remember
