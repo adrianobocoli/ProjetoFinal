@@ -1,4 +1,4 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header class="navbar navbar-fixed-top navbar-inverse" role="navigation">
   <div class="container">
     <%= link_to "Pro.Fi.T.E.C.", '/', id: "logo" %>
     <nav>
@@ -22,6 +22,14 @@
               </li>
             </ul>
           </li>
+			<%= form_tag(usuarios_path, :method => "get", class:"navbar-form navbar-left", id: "search-form", role:"search") do %>
+    	  		<div class="input-group">
+      			<%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Buscar usuarios" %>
+					<span class="input-group-btn">
+        				<button class="btn btn-default" type="submit" style="height:30px;">Pesquisar!</button>
+      			</span>
+				</div>
+ 		  <% end %>
         <% else %>
           <li><%= link_to "Log in", login_path %></li>
         <% end %>

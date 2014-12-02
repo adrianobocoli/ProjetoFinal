@@ -1,5 +1,9 @@
 class Usuario < ActiveRecord::Base
 	attr_accessor :remember_token
+	
+	def self.search(query)
+  		where("nomeCompleto like ?", "%#{query}%") 
+	end
   
   def remember
     self.remember_token = Usuario.new_token

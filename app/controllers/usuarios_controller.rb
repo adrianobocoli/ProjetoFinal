@@ -19,7 +19,11 @@ class UsuariosController < ApplicationController
   # GET /usuarios
   # GET /usuarios.json
   def index
-    @usuarios = Usuario.all
+    if params[:search]
+      @usuarios = Usuario.search(params[:search]).order("created_at DESC")
+    else
+      @usuarios = Usuario.order("created_at DESC")
+    end
   end
 
 	# GET /usuarios/random

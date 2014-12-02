@@ -1,13 +1,16 @@
-<h1>Listagem de todos os usuários do site</h1>
+<h1>Usuários </h1>
 
 <ul class="users">
+  <% if @usuarios.empty? %>
+  <script language="JavaScript">
+   alert("<%= @popup_message %> Nenhum usuário encontrado!!");
+  </script>
+	Nenhum usuário encontrado! Busque novamente!
+<% end %>
+
   <% @usuarios.each do |usuario| %>
     <li>
       <%= link_to usuario.nomeCompleto, usuario %>
     </li>
   <% end %>
 </ul>
-
-random
-
-<% unless @random_image.foto_url.nil? %><%= cl_image_tag @random_image.foto_url(:medium_avatar) %><br /><% end %>

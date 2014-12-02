@@ -1,6 +1,6 @@
 class UsuariosController < ApplicationController
   before_action :logged_in_user, only: [:edit, :update, :destroy, :show]
-  before_action :correct_user,   only: [:edit, :update]
+  before_action :correct_user,   only: [:edit, :update, :destroy]
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
 	def logged_in_user
@@ -19,7 +19,15 @@ class UsuariosController < ApplicationController
   # GET /usuarios
   # GET /usuarios.json
   def index
-    @usuarios = Usuario.all
+    if params[:search]
+      @usuarios = Usuario.search(params[:search]).order("created_at DESC")
+    else
+      @usuarios = Usuario.order("created_at DESC")
+    end
+
+	 if @usuarios.empty?
+		render(:index) { |page| page.alert("Emails have been sent...") }
+	 end
   end
 
 	# GET /usuarios/random
