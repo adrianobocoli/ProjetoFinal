@@ -16,8 +16,6 @@
   </h2>
 
 	<div class="container">
-	
-		<h4>Usuários cadastrados</h4>
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
     	<!-- Carousel indicators -->
     	<ol class="carousel-indicators">
@@ -37,7 +35,7 @@
         </div>
 		  <% random.each do |string| %>
         <div class="item ">
-				<%= cl_image_tag string.foto_url(:large_avatar) %>
+				<%= link_to (cl_image_tag string.foto_url(:large_avatar)), string %>
             <h2></h2>
             <div class="carousel-caption">
               <h3><%= link_to string.nomeCompleto, string %></h3>

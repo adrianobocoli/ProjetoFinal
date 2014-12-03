@@ -15,3 +15,15 @@
 //= require bootstrap
 //= require turbolinks
 //= require_tree .
+
+//= require jquery.fancybox.pack
+//= require jquery.fancybox-buttons
+
+jQuery(function($) { // as soon as DOM is ready
+$(".fancybox").fancybox({ // initialize fancybox on all pages where it is present
+        helpers: {
+            title: {type: 'inside'},
+            buttons: {}
+        }
+    });
+});

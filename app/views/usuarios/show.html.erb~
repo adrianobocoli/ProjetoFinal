@@ -27,29 +27,29 @@
 									<!--text-->
 									<div class="text">
 										<p>
-  <strong>Nome Completo:</strong>
-  <%= @usuario.nomeCompleto %>
-</p>
+  											<strong>Nome Completo:</strong>
+  											<%= @usuario.nomeCompleto %>
+										</p>
 
-<p>
-  <strong>Cidade:</strong>
-  <%= @usuario.cidade %>
-</p>
+										<p>
+  											<strong>Cidade:</strong>
+ 	 										<%= @usuario.cidade %>
+										</p>
 
-<p>
-  <strong>Estado:</strong>
-  <%= @usuario.estado %>
-</p>
+										<p>
+  											<strong>Estado:</strong>
+  											<%= @usuario.estado %>	
+										</p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @usuario.email %>
-</p>
+										<p>
+  											<strong>Email:</strong>
+  											<%= @usuario.email %>
+										</p>
 
-<p>
-  <strong>Descricao Pessoal:</strong>
-  <%= @usuario.descricaoPessoal %>
-</p>
+										<p>
+  											<strong>Descricao Pessoal:</strong>
+  											<%= @usuario.descricaoPessoal %>
+										</p>
 									</div>
 								</div>
 							</div>
@@ -57,5 +57,10 @@
 					</div>
 				</div>
 			</div>
+			<% random.each do |photo| %>
+			<%= link_to (cl_image_tag photo.foto_url(:medium_avatar)),
+                photo,
+                class: 'fancybox', rel: 'group', title: photo.nomeCompleto, alt: 'Foto' %>
+  			<% end %>
 	</div>
 

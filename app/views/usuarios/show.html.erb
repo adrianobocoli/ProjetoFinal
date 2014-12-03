@@ -57,5 +57,12 @@
 					</div>
 				</div>
 			</div>
+			<h2>
+			<% random.each do |photo| %>
+			<%= link_to (cl_image_tag photo.foto_url(:medium_avatar)),
+                photo,
+                class: 'fancybox', rel: 'group', title: photo.nomeCompleto, alt: 'Foto' %>
+  			<% end %>
+			</h2>
 	</div>
 
