@@ -9,12 +9,26 @@
 		<div class="center jumbotron">
 			<h1>Referencias</h1>
 	<br/>
-		  <h2>
+		  <h3>
 		    <a href="http://hashrocket.com/blog/posts/rails-quick-tips-random-records">Obtendo usuários randomicamente para o carousel</a>
-		  </h2>
-		  <h2>
+		  </h3>
+		  <h3>
 		    <a href="http://stackoverflow.com/questions/10714119/ruby-on-rails-call-controller-method-from-a-view">Usuarios random na index</a>
-		  </h2>
+		  </h3>
+		  <h3>
+		    <a href="http://www.uberobert.com/rails_cloudinary_carrierwave/">Cloudinary e Carrierwave (manipulação de imagens)</a>
+		  </h3>
+		  <h3>
+		    <a href="http://guides.railsgirls.com/heroku/">Guia para deploys e submits em Heroku</a>
+		  </h3>
+		  <h3>
+		    <a href="http://www.uberobert.com/rails_cloudinary_carrierwave/">Cloudinary e Carrierwave (manipulação de imagens)</a>
+		  </h3>
+		  <h3>
+		    <a href="http://www.uberobert.com/rails_cloudinary_carrierwave/">Cloudinary e Carrierwave (manipulação de imagens)</a>
+		  </h3>
+		  
+			
 </div>
   </body>
 </html>
